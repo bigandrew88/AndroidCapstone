@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="30dp"
+    tools:context=".login.LoginActivity">
+
+        <Button
+            android:id="@+id/btnTips"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="10dp"
+            android:paddingHorizontal="40dp"
+            android:paddingVertical="20dp"
+            android:text="@string/btnTips"
+            app:icon="@android:drawable/ic_dialog_info" />
+
+        <Button
+            android:id="@+id/btnLoginMain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/description"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="200dp"
+            android:paddingHorizontal="80dp"
+            android:paddingVertical="20dp"
+            android:text="@string/btnLoginMain"
+            app:icon="@android:drawable/btn_star" />
+
+        <Button
+            android:id="@+id/btnContactUs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="10dp"
+            android:paddingHorizontal="5dp"
+            android:paddingVertical="20dp"
+            android:text="@string/btnContactUs"
+            app:icon="@android:drawable/ic_menu_help" />
+
+        <TextView
+            android:id="@+id/description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:text=""
+            android:textSize="25dp" />
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="332dp"
+            android:layout_height="282dp"
+            android:layout_centerHorizontal="true"
+            app:srcCompat="@mipmap/taylorinsurancegrey" />
+
+        <TextView
+            android:id="@+id/txtMainQuote"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/btnLoginMain"
+            android:layout_centerHorizontal="true"
+            android:paddingVertical="100dp"
+            android:text="All your money are now belong to us!" />
+
+</RelativeLayout>

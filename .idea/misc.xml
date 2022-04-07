@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/AndroidStudioProjects/AndroidCapstone/app/src/main/res/drawable/ic_menu_camera.xml" value="0.16" />
+        <entry key="..\:/AndroidStudioProjects/AndroidCapstone/app/src/main/res/drawable/ic_vectordesign.xml" value="0.16" />
+        <entry key="..\:/AndroidStudioProjects/AndroidCapstone/app/src/main/res/drawable/taylorinsurancegrey_background.xml" value="0.222" />
+        <entry key="..\:/AndroidStudioProjects/AndroidCapstone/app/src/main/res/layout/activity_auto_insur.xml" value="0.18802083333333333" />
+        <entry key="..\:/AndroidStudioProjects/AndroidCapstone/app/src/main/res/layout/activity_contact_us.xml" value="0.18802083333333333" />
+        <entry key="..\:/AndroidStudioProjects/AndroidCapstone/app/src/main/res/layout/activity_customer.xml" value="0.2871376811594203" />
+        <entry key="..\:/AndroidStudioProjects/AndroidCapstone/app/src/main/res/layout/activity_home_insur.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/AndroidCapstone/app/src/main/res/layout/activity_login.xml" value="0.33" />
+        <entry key="..\:/AndroidStudioProjects/AndroidCapstone/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/AndroidCapstone/app/src/main/res/layout/activity_tips.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/AndroidCapstone/app/src/main/res/layout/auto_insurance_activity.xml" value="0.358695652173913" />
+        <entry key="..\:/AndroidStudioProjects/AndroidCapstone/app/src/main/res/layout/customer_activity.xml" value="0.358695652173913" />
+        <entry key="..\:/AndroidStudioProjects/AndroidCapstone/app/src/main/res/layout/home_insurance_activity.xml" value="0.358695652173913" />
+        <entry key="..\:/AndroidStudioProjects/AndroidCapstone/app/src/main/res/layout/login_activity.xml" value="0.358695652173913" />
+        <entry key="..\:/AndroidStudioProjects/AndroidCapstone/app/src/main/res/layout/nav_header_main.xml" value="0.36666666666666664" />
+        <entry key="..\:/AndroidStudioProjects/AndroidCapstone/app/src/main/res/layout/tips_activity.xml" value="0.4282238442822384" />
+        <entry key="..\:/AndroidStudioProjects/AndroidCapstone/app/src/main/res/menu/activity_main_drawer.xml" value="0.18802083333333333" />
+        <entry key="..\:/AndroidStudioProjects/AndroidCapstone/app/src/main/res/menu/main.xml" value="0.2635416666666667" />
+        <entry key="..\:/AndroidStudioProjects/AndroidCapstone/app/src/main/res/mipmap-anydpi-v26/taylorinsurancegrey.xml" value="0.222" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
