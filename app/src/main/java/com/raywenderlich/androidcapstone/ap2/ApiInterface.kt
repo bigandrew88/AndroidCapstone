@@ -1,6 +1,7 @@
 package com.raywenderlich.androidcapstone.ap2
 
 import com.google.gson.JsonObject
+import com.raywenderlich.androidcapstone.apidata.CustomerResponse
 import okhttp3.OkHttpClient
 import retrofit2.Call
 import retrofit2.Retrofit
@@ -19,10 +20,11 @@ interface ApiInterface  {
         @Path("customerId") CustID: String
     ) : Call<JsonObject>
 
-    @GET("/v1/customers?email={email}")
-    fun fetchLogin(
-        @Path("email") Username: String
-    ) : Call<JsonObject>
+    @GET("/v1/customers")
+    fun fetchLogin(@Query("email") email: String) : Call<JsonObject>
+
+    @GET("/v1/customers")
+    fun fetchListLogin(@Query("email") email: String) : Call<List<CustomerResponse>>
 
     companion object {
         fun create() : ApiInterface {
