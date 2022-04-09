@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import com.raywenderlich.androidcapstone.ap2.ApiInterface
 import com.raywenderlich.androidcapstone.apidata.CustomerResponse
-import com.raywenderlich.androidcapstone.databinding.ActivityHomeInsurBinding
+import com.raywenderlich.androidcapstone.databinding.ActivityHomeInsuranceBinding
 import com.raywenderlich.androidcapstone.test.APIClient
 import com.raywenderlich.androidcapstone.test.APIInterface
 import com.raywenderlich.androidcapstone.test.MultipleResource
@@ -16,13 +16,13 @@ import retrofit2.Response
 
 class HomeInsurActivity : AppCompatActivity() {
 
-    private lateinit var activityHomeInsurBinding: ActivityHomeInsurBinding
+    private lateinit var activityHomeInsurBinding: ActivityHomeInsuranceBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_home_insur)
+        setContentView(R.layout.activity_home_insurance)
 
-        activityHomeInsurBinding = ActivityHomeInsurBinding.inflate(layoutInflater)
+        activityHomeInsurBinding = ActivityHomeInsuranceBinding.inflate(layoutInflater)
         setContentView(activityHomeInsurBinding.root)
 
         activityHomeInsurBinding.btnBackHomeInsur.setOnClickListener {

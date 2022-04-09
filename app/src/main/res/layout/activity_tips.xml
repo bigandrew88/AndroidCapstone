@@ -12,7 +12,7 @@
         android:layout_width="332dp"
         android:layout_height="282dp"
         android:layout_centerHorizontal="true"
-        app:srcCompat="@mipmap/taylorinsurancegrey" />
+        android:background="@drawable/taylorinsurancepuregreen" />
 
     <TextView
         android:id="@+id/txtMainAutoInsur"
