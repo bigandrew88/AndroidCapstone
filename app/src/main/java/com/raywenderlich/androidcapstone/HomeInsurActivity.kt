@@ -4,6 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import com.raywenderlich.androidcapstone.ap2.ApiInterface
+import com.raywenderlich.androidcapstone.apidata.CustomerResponse
 import com.raywenderlich.androidcapstone.databinding.ActivityHomeInsurBinding
 import com.raywenderlich.androidcapstone.test.APIClient
 import com.raywenderlich.androidcapstone.test.APIInterface
@@ -29,32 +31,23 @@ class HomeInsurActivity : AppCompatActivity() {
             finish()
         }
 
-        val apiInterface = APIClient().getClient()?.create<APIInterface>(APIInterface::class.java)
+        val username = intent.getStringExtra("username").toString()
 
-        /**
-         * GET List Resources
-         */
-        val call: Call<MultipleResource?>? = apiInterface!!.doGetListResources()
-        call?.enqueue(object : Callback<MultipleResource?> {
-            override fun onResponse(
-                call: Call<MultipleResource?>?,
-                response: Response<MultipleResource?>
+        val service = ApiInterface.create()
+        val call2: Call<List<CustomerResponse>> = service.fetchListLogin(username)
+        call2.enqueue(object: Callback<List<CustomerResponse>>{
+            override fun onResponse(call: Call<List<CustomerResponse>>, response: Response<List<CustomerResponse>>
             ) {
-                Log.d("TAG", response.code().toString() + "")
-                var displayResponse = ""
-                val resource: MultipleResource? = response.body()
-                //val text = resource?.customerId
-                val firstName = resource?.firstName
-                val totalPages = resource?.lastName
-                val datumList = resource?.email
-
-
-
-                //Log.d("text",firstName.toString())
+                val response = response.body()
+                //Log.d("SampleLogin",response.toString())
+                //apiUsername = response?.get(0)?.email.toString()
+                //apiPassword = response?.get(0)?.password.toString()
+                //apiUser = response?.get(0)?.firstName.toString()
+                //Log.d("Inside Username",apiUsername)
             }
 
-            override fun onFailure(call: Call<MultipleResource?>, t: Throwable?) {
-                call.cancel()
+            override fun onFailure(call: Call<List<CustomerResponse>>, t: Throwable) {
+                t.message?.let { Log.d("Error", it) }
             }
         })
     }

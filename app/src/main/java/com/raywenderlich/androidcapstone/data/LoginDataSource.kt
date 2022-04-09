@@ -27,10 +27,10 @@ import java.net.URLDecoder
  * Class that handles authentication w/ login credentials and retrieves user information.
  */
 class LoginDataSource : ViewModel() {
-    private var apiUsername: String = ""
-    private var apiPassword: String = ""
-    private var apiUser: String = ""
-    lateinit var custNum: String
+    private lateinit var apiUsername: String
+    private lateinit var apiPassword: String
+    private lateinit var apiUser: String
+    var custNum = ""
 
     fun login(username: String, password: String): Result<LoggedInUser> {
         try {
@@ -42,10 +42,11 @@ class LoginDataSource : ViewModel() {
                 override fun onResponse(call: Call<List<CustomerResponse>>, response: Response<List<CustomerResponse>>
                 ) {
                     val response = response.body()
-                    Log.d("Sample",response.toString())
+                    //Log.d("SampleLogin",response.toString())
                     apiUsername = response?.get(0)?.email.toString()
                     apiPassword = response?.get(0)?.password.toString()
                     apiUser = response?.get(0)?.firstName.toString()
+                    //Log.d("Inside Username",apiUsername)
                 }
 
                 override fun onFailure(call: Call<List<CustomerResponse>>, t: Throwable) {
@@ -53,30 +54,6 @@ class LoginDataSource : ViewModel() {
                 }
             })
 
-//            val service = ApiInterface.create()
-//            Log.d("Login",username)
-//            val call2: Call<JsonObject> = service.fetchLogin(username)
-//            call2.enqueue(object : Callback<JsonObject> {
-//
-//                override fun onResponse(call: Call<JsonObject>, response: Response<JsonObject>) {
-//                    val response = response.body()
-//                    Log.d("Sample",response.toString())
-//                    apiUsername = response?.get("email").toString()
-//                    apiPassword = response?.get("password").toString()
-//                    apiUser = response?.get("firstName").toString()
-//                    custNum = response?.get("customerId").toString()
-//
-//                }
-//
-//                override fun onFailure(call: Call<JsonObject>, t: Throwable) {
-//                    t.message?.let { Log.d("Sample", it) }
-//                }
-//            })
-//
-//            apiUsername = apiUsername.substring(1, apiUsername.length - 1)
-//            apiPassword = apiPassword.substring(1, apiPassword.length - 1)
-//            custNum = custNum.substring(1, custNum.length - 1)
-//            Log.d("Username", custNum)
             val fakeUser = LoggedInUser(java.util.UUID.randomUUID().toString(), apiUser)
             return if (username == apiUsername && password == apiPassword){
                 Result.Success(fakeUser)

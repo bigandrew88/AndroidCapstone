@@ -41,9 +41,8 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
-
-        val username = binding.username
-        val password = binding.password
+        var username = binding.username
+        var password = binding.password
         val login = binding.login
         val loading = binding.loading
 
@@ -75,8 +74,9 @@ class LoginActivity : AppCompatActivity() {
                 updateUiWithUser(loginResult.success)
                 setResult(Activity.RESULT_OK)
 
+                //Log.d("Login Username",username.text.toString())
                 val intent = Intent(this, CustomerActivity::class.java)
-                intent.putExtra("username",username.toString())
+                intent.putExtra("username",username.text.toString())
                 startActivity(intent)
                 finish()
             }
@@ -109,6 +109,8 @@ class LoginActivity : AppCompatActivity() {
             }
 
             login.setOnClickListener {
+                username = binding.username
+                password = binding.password
                 loading.visibility = View.VISIBLE
                 loginViewModel.login(username.text.toString(), password.text.toString())
             }
