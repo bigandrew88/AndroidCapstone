@@ -21,8 +21,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/imgActCustLogo"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="40dp"
-        android:text="Customer Name: "
+        android:layout_marginStart="40dp"
+        android:text="@string/txtActCustName"
         android:textSize="16sp"
         android:textStyle="bold" />
 
@@ -32,9 +32,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtActCustName"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="40dp"
+        android:layout_marginStart="40dp"
         android:paddingBottom="60dp"
-        android:text="Email: "
+        android:text="@string/txtActCustEmail"
         android:textStyle="bold" />
 
     <Button
@@ -43,9 +43,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/txtActCustEmail"
         android:layout_centerInParent="true"
-        android:paddingHorizontal="80dp"
-        android:paddingVertical="20dp"
-        android:text="Home Insurance"
+        android:paddingHorizontal="60dp"
+        android:paddingVertical="15dp"
+        android:text="@string/btnHomeInsur"
         app:icon="?attr/actionModeSelectAllDrawable" />
 
     <Button
@@ -55,9 +55,9 @@
         android:layout_below="@+id/btnHomeInsur"
         android:layout_centerInParent="true"
         android:layout_marginTop="60dp"
-        android:paddingHorizontal="80dp"
-        android:paddingVertical="20dp"
-        android:text="Auto Insurance"
+        android:paddingHorizontal="60dp"
+        android:paddingVertical="15dp"
+        android:text="@string/btnAutoInsur"
         app:icon="?attr/actionModeSelectAllDrawable" />
 
     <Button
@@ -68,6 +68,6 @@
         android:layout_centerInParent="true"
         android:paddingHorizontal="80dp"
         android:paddingVertical="20dp"
-        android:text="Home"
+        android:text="@string/btnCustHome"
         app:icon="@android:drawable/ic_dialog_dialer" />
 </RelativeLayout>

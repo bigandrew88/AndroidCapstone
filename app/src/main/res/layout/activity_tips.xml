@@ -8,30 +8,30 @@
     tools:context=".AutoInsurActivity">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/ivTipsLogo"
         android:layout_width="332dp"
         android:layout_height="282dp"
         android:layout_centerHorizontal="true"
         android:background="@drawable/taylorinsurancepuregreen" />
 
     <TextView
-        android:id="@+id/txtMainAutoInsur"
+        android:id="@+id/txtMainAutoInsurTip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView2"
+        android:layout_below="@+id/ivTipsLogo"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
-        android:text="Tip of the day:"
-        android:textSize="25dp" />
+        android:text="@string/txtMainAutoInsurTip"
+        android:textSize="25sp" />
 
     <TextView
         android:id="@+id/txtMainAutoTips"
         android:layout_width="325dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txtMainAutoInsur"
+        android:layout_below="@+id/txtMainAutoInsurTip"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
-        android:text="Did you know that you are only qualified to pay the premiums?"
+        android:text="@string/txtMainAutoTips"
         android:textSize="25dp" />
 
     <Button
@@ -45,6 +45,6 @@
         android:paddingVertical="20dp"
         android:shape="rectangle"
         android:radius="10dp"
-        android:text="Home"
+        android:text="@string/btnBackTips"
         app:icon="@android:drawable/ic_dialog_dialer" />
 </RelativeLayout>

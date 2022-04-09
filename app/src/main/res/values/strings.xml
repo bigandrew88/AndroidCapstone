@@ -27,9 +27,30 @@
     <string name="invalid_password">Password must be >5 characters</string>
     <string name="login_failed">"Login failed"</string>
 
-    <string name="btnHomeInsur">Home Insurance</string>
-    <string name="btnAutoInsur">Auto Insurance</string>
-
+    <string name="btnHomeInsur">Home Insurance Policy</string>
+    <string name="btnAutoInsur">Auto Insurance Policy</string>
     <string name="txtActCustName">Customer Name: </string>
     <string name="txtActCustEmail">Email: </string>
+    <string name="btnCustHome">Home</string>
+
+    <string name="txtMainAutoInsurTip">Tip of the day:</string>
+    <string name="txtMainAutoTips">Did you know that you are only qualified to pay the premiums?</string>
+    <string name="btnBackTips">Home</string>
+
+    <string name="txtContactUs">Contact Us</string>
+    <string name="txtContactInfo">Phone: 709-123-4567</string>
+    <string name="txtContactInfoEmail">Email: quote@taylorinsurance.com</string>
+    <string name="btnBackContactUs">Home</string>
+
+    <string name="txtHomeInfo">Home Insurance Information:</string>
+    <string name="txtHomeCity">City:</string>
+    <string name="txtHomeDateBuilt">Date Built:</string>
+    <string name="txtHomeHeatType">Heating Type:</string>
+    <string name="txtHomeLocation">Location:</string>
+    <string name="txtHomePostal">Postal Code:</string>
+    <string name="txtHomeAddress">Address:</string>
+    <string name="txtHomePolicySD">Policy Start Date:</string>
+    <string name="txtHomePolicyED">Policy End Date:</string>
+    <string name="txtHomePolicyPrem">Policy Premium:</string>
+
 </resources>

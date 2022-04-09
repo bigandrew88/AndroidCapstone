@@ -8,29 +8,29 @@
     tools:context=".AutoInsurActivity">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/ivContactLogo"
         android:layout_width="332dp"
         android:layout_height="282dp"
         android:layout_centerHorizontal="true"
         android:background="@drawable/taylorinsurancepuregreen" />
     <TextView
-        android:id="@+id/txtMainAutoInsur"
+        android:id="@+id/txtContactUs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/imageView2"
+        android:layout_below="@+id/ivContactLogo"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="60dp"
-        android:text="Contact Us"
-        android:textSize="25dp" />
+        android:text="@string/txtContactUs"
+        android:textSize="25sp" />
 
     <TextView
         android:id="@+id/txtContactInfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/txtMainAutoInsur"
+        android:layout_below="@+id/txtContactUs"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
-        android:text="Phone: 709-123-4567"
+        android:text="@string/txtContactInfo"
         android:textSize="20sp" />
 
     <TextView
@@ -40,7 +40,7 @@
         android:layout_below="@+id/txtContactInfo"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"
-        android:text="Email: quote@taylorinsurance.com"
+        android:text="@string/txtContactInfoEmail"
         android:textSize="20sp" />
 
     <Button
@@ -51,6 +51,6 @@
         android:layout_centerInParent="true"
         android:paddingHorizontal="80dp"
         android:paddingVertical="20dp"
-        android:text="Home"
+        android:text="@string/btnBackContactUs"
         app:icon="@android:drawable/ic_dialog_dialer" />
 </RelativeLayout>
