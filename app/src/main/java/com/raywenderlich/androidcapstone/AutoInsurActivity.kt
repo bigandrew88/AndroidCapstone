@@ -4,9 +4,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import com.raywenderlich.androidcapstone.ap2.ApiInterface
-import com.raywenderlich.androidcapstone.apidata.CustomerResponse
+import android.widget.Toast
+import androidx.lifecycle.ViewModelProvider
 import com.raywenderlich.androidcapstone.databinding.ActivityAutoInsurBinding
+import com.raywenderlich.androidcapstone.test.SharedViewModel
+import kotlinx.android.synthetic.main.activity_auto_insur.*
+import kotlinx.android.synthetic.main.activity_home_insurance.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -14,7 +17,9 @@ import retrofit2.Response
 class AutoInsurActivity : AppCompatActivity() {
 
     private lateinit var activityAutoInsurBinding: ActivityAutoInsurBinding
-
+    val viewModel: SharedViewModel by lazy{
+        ViewModelProvider(this).get(SharedViewModel::class.java)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,22 +34,25 @@ class AutoInsurActivity : AppCompatActivity() {
             finish()
         }
         val username = intent.getStringExtra("username").toString()
-        val service = ApiInterface.create()
-        val call2: Call<List<CustomerResponse>> = service.fetchListLogin(username)
-        call2.enqueue(object: Callback<List<CustomerResponse>>{
-            override fun onResponse(call: Call<List<CustomerResponse>>, response: Response<List<CustomerResponse>>
-            ) {
-                val response = response.body()
-                //Log.d("SampleLogin",response.toString())
-                //apiUsername = response?.get(0)?.email.toString()
-                //apiPassword = response?.get(0)?.password.toString()
-                //apiUser = response?.get(0)?.firstName.toString()
-                //Log.d("Inside Username",apiUsername)
+        viewModel.refreshCustomer(username)
+        viewModel.customerLiveData.observe(this@AutoInsurActivity){ response ->
+            if(response == null){
+                Log.d("Test","API Failed")
+                Toast.makeText(
+                    this@AutoInsurActivity,
+                    "Unsuccessful network call",
+                    Toast.LENGTH_LONG
+                ).show()
+                return@observe
+            }else{
+                //Log.d("Test","API Clear")
+                txtAutoMake.text = "City: " + response?.get(0)?.autos?.get(0)?.make.toString()
+                txtAutoModel.text = "Date Built: " + response?.get(0)?.autos?.get(0)?.model.toString()
+                txtAutoDateMade.text = "Heating Type: " + response?.get(0)?.autos?.get(0)?.dateMade.toString()
+                txtAutoPolicySD.text = "Policy Start Date: " + response?.get(0)?.autos?.get(0)?.autoPolicy?.autoPolicyStartDate.toString()
+                txtAutoPolicyED.text = "Policy End Date: " + response?.get(0)?.autos?.get(0)?.autoPolicy?.autoPolicyEndDate.toString()
+                txtAutoPolicyPrem.text = "Policy Premium: " + response?.get(0)?.autos?.get(0)?.autoPolicy?.autoPolicyPremium.toString()
             }
-
-            override fun onFailure(call: Call<List<CustomerResponse>>, t: Throwable) {
-                t.message?.let { Log.d("Error", it) }
-            }
-        })
+        }
     }
 }

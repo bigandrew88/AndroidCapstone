@@ -1,7 +1,6 @@
 package com.raywenderlich.androidcapstone.test
 
 import androidx.lifecycle.*
-import com.raywenderlich.androidcapstone.apidata.CustomerResponse
 import kotlinx.coroutines.launch
 
 class SharedViewModel : ViewModel() {

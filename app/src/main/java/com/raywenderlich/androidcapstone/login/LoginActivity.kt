@@ -42,9 +42,6 @@ class LoginActivity : AppCompatActivity() {
         val login = binding.login
         val loading = binding.loading
 
-        val apiUsername: String
-        val apiPassword: String
-
         loginViewModel = ViewModelProvider(this, LoginViewModelFactory())
             .get(LoginViewModel::class.java)
 
@@ -75,7 +72,7 @@ class LoginActivity : AppCompatActivity() {
 
                 //Log.d("Login Username",username.text.toString())
                 val intent = Intent(this, CustomerActivity::class.java)
-                intent.putExtra("username",username.text.toString())
+                intent.putExtra("customer",username.text.toString())
                 startActivity(intent)
                 finish()
             }
