@@ -18,7 +18,7 @@ import androidx.lifecycle.Observer
 import com.raywenderlich.androidcapstone.CustomerActivity
 import com.raywenderlich.androidcapstone.MainActivity
 import com.raywenderlich.androidcapstone.R
-import com.raywenderlich.androidcapstone.test.SharedViewModel
+import com.raywenderlich.androidcapstone.API.SharedViewModel
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var loginViewModel: LoginViewModel

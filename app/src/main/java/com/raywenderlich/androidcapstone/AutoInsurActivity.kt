@@ -7,12 +7,8 @@ import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.raywenderlich.androidcapstone.databinding.ActivityAutoInsurBinding
-import com.raywenderlich.androidcapstone.test.SharedViewModel
+import com.raywenderlich.androidcapstone.API.SharedViewModel
 import kotlinx.android.synthetic.main.activity_auto_insur.*
-import kotlinx.android.synthetic.main.activity_home_insurance.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
 class AutoInsurActivity : AppCompatActivity() {
 

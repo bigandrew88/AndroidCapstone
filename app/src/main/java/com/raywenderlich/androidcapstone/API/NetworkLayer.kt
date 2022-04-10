@@ -1,4 +1,4 @@
-package com.raywenderlich.androidcapstone.test
+package com.raywenderlich.androidcapstone.API
 
 
 import com.squareup.moshi.Moshi

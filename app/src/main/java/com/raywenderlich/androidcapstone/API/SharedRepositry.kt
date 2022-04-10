@@ -1,4 +1,4 @@
-package com.raywenderlich.androidcapstone.test
+package com.raywenderlich.androidcapstone.API
 
 class SharedRepositry {
     suspend fun getCustomer(customer:String): List<ApiCustomerResponse>? {
