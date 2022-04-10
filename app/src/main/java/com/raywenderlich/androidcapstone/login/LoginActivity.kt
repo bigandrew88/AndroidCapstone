@@ -42,6 +42,8 @@ class LoginActivity : AppCompatActivity() {
         val login = binding.login
         val loading = binding.loading
 
+        Log.d("Username",username.text.toString())
+
         loginViewModel = ViewModelProvider(this, LoginViewModelFactory())
             .get(LoginViewModel::class.java)
 
@@ -72,7 +74,7 @@ class LoginActivity : AppCompatActivity() {
 
                 //Log.d("Login Username",username.text.toString())
                 val intent = Intent(this, CustomerActivity::class.java)
-                intent.putExtra("customer",username.text.toString())
+                intent.putExtra("customer",username.text.toString().lowercase())
                 startActivity(intent)
                 finish()
             }
@@ -105,10 +107,10 @@ class LoginActivity : AppCompatActivity() {
             }
 
             login.setOnClickListener {
-                viewModel.refreshCustomer(username.toString())
+                viewModel.refreshCustomer(username.toString().lowercase())
                 viewModel.customerLiveData.observe(this@LoginActivity){ response ->
                     if(response == null){
-                        Log.d("Test","API Failed")
+                        //Log.d("Test","API Failed")
                         Toast.makeText(
                             this@LoginActivity,
                             "Unsuccessful network call",
@@ -116,15 +118,10 @@ class LoginActivity : AppCompatActivity() {
                         ).show()
                         return@observe
                     }else{
-                        Log.d("Test","API Clear")
-                        Log.d("Test Data",response[0].email)
-                        Log.d("Test Data",response[0].password)
-
-                        Log.d("Txt Username",username.text.toString())
-                        Log.d("Txt Password",password.text.toString())
-                        if(response[0].email == username.text.toString() && response[0].password == password.text.toString()){
+                        //Log.d("Test","API Clear")
+                        if(response[0].email.lowercase() == username.text.toString().lowercase() && response[0].password == password.text.toString()){
                             loading.visibility = View.VISIBLE
-                            loginViewModel.login(username.text.toString(), password.text.toString())
+                            loginViewModel.login(username.text.toString().lowercase(), password.text.toString())
                         }else{
                             Toast.makeText(
                                 this@LoginActivity,

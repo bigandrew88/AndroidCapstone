@@ -38,7 +38,7 @@ class CustomerActivity : AppCompatActivity() {
                 ).show()
                 return@observe
             }else{
-                Log.d("Test","API Clear")
+                //Log.d("Test","API Clear")
                 txtActCustName.text = "Customer Name: " + response[0].firstName.toString() + " " + response[0].lastName.toString()
                 txtActCustEmail.text = "Email: " + response[0].email.toString()
             }
