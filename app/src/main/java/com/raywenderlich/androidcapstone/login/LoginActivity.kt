@@ -5,7 +5,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.util.Log
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.EditText
@@ -15,17 +14,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.raywenderlich.androidcapstone.databinding.ActivityLoginBinding
 import androidx.lifecycle.Observer
-import com.google.gson.JsonObject
-import com.raywenderlich.androidcapstone.ContactUsActivity
 import com.raywenderlich.androidcapstone.CustomerActivity
 import com.raywenderlich.androidcapstone.MainActivity
 import com.raywenderlich.androidcapstone.R
-import com.raywenderlich.androidcapstone.ap2.ApiInterface
-import kotlinx.android.synthetic.main.activity_customer.*
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var loginViewModel: LoginViewModel
@@ -41,8 +32,8 @@ class LoginActivity : AppCompatActivity() {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
-        var username = binding.username
-        var password = binding.password
+        val username = binding.username
+        val password = binding.password
         val login = binding.login
         val loading = binding.loading
 
@@ -109,8 +100,6 @@ class LoginActivity : AppCompatActivity() {
             }
 
             login.setOnClickListener {
-                username = binding.username
-                password = binding.password
                 loading.visibility = View.VISIBLE
                 loginViewModel.login(username.text.toString(), password.text.toString())
             }

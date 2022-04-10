@@ -5,14 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_margin="16dp"
     tools:context=".HomeInsurActivity"    >
+
+    <ImageView
+        android:id="@+id/ivMainLogo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:background="@drawable/taylorinsurancepuregreen" />
 
     <TextView
         android:id="@+id/txtHomeInfo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
+
         android:text="@string/txtHomeInfo"
         android:textSize="24sp"
         android:textStyle="bold" />
@@ -22,8 +28,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/txtHomeCity"
-        android:layout_margin="5dp"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:layout_marginStart="30dp"/>
 
     <TextView
         android:id="@+id/txtHomeDateBuilt"
@@ -31,7 +37,7 @@
         android:layout_height="wrap_content"
         android:text="@string/txtHomeDateBuilt"
         android:textSize="16sp"
-        android:layout_margin="5dp"/>
+        android:layout_marginStart="30dp"/>
 
     <TextView
         android:id="@+id/txtHomeHeatType"
@@ -39,7 +45,7 @@
         android:layout_height="wrap_content"
         android:text="@string/txtHomeHeatType"
         android:textSize="16sp"
-        android:layout_margin="5dp"/>
+        android:layout_marginStart="30dp"/>
 
     <TextView
         android:id="@+id/txtHomeLocation"
@@ -47,7 +53,7 @@
         android:layout_height="wrap_content"
         android:text="@string/txtHomeLocation"
         android:textSize="16sp"
-        android:layout_margin="5dp"/>
+        android:layout_marginStart="30dp"/>
 
     <TextView
         android:id="@+id/txtHomePostal"
@@ -55,7 +61,7 @@
         android:layout_height="wrap_content"
         android:text="@string/txtHomePostal"
         android:textSize="16sp"
-        android:layout_margin="5dp"/>
+        android:layout_marginStart="30dp"/>
 
     <TextView
         android:id="@+id/txtHomeAddress"
@@ -63,7 +69,7 @@
         android:layout_height="wrap_content"
         android:text="@string/txtHomeAddress"
         android:textSize="16sp"
-        android:layout_margin="5dp"/>
+        android:layout_marginStart="30dp"/>
 
     <TextView
         android:id="@+id/txtHomePolicySD"
@@ -71,7 +77,7 @@
         android:layout_height="wrap_content"
         android:text="@string/txtHomePolicySD"
         android:textSize="16sp"
-        android:layout_margin="5dp"/>
+        android:layout_marginStart="30dp"/>
 
     <TextView
         android:id="@+id/txtHomePolicyED"
@@ -79,15 +85,15 @@
         android:layout_height="wrap_content"
         android:text="@string/txtHomePolicyED"
         android:textSize="16sp"
-        android:layout_margin="5dp"/>
+        android:layout_marginStart="30dp"/>
 
     <TextView
         android:id="@+id/txtHomePolicyPrem"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
         android:text="@string/txtHomePolicyPrem"
-        android:textSize="16sp"
-        android:layout_margin="5dp"/>
+        android:textSize="16sp" />
 
     <LinearLayout
         android:layout_width="match_parent"

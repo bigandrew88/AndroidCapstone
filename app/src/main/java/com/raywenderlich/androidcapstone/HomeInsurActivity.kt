@@ -10,6 +10,7 @@ import com.raywenderlich.androidcapstone.databinding.ActivityHomeInsuranceBindin
 import com.raywenderlich.androidcapstone.test.APIClient
 import com.raywenderlich.androidcapstone.test.APIInterface
 import com.raywenderlich.androidcapstone.test.MultipleResource
+import kotlinx.android.synthetic.main.activity_home_insurance.*
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -44,6 +45,16 @@ class HomeInsurActivity : AppCompatActivity() {
                 //apiPassword = response?.get(0)?.password.toString()
                 //apiUser = response?.get(0)?.firstName.toString()
                 //Log.d("Inside Username",apiUsername)
+
+                txtHomeCity.text = "City: " + response?.get(0)?.homes?.get(0)?.city.toString()
+                txtHomeDateBuilt.text = "Date Built: " + response?.get(0)?.homes?.get(0)?.dateBuilt.toString()
+                txtHomeHeatType.text = "Heating Type: " + response?.get(0)?.homes?.get(0)?.heatingType.toString()
+                txtHomeLocation.text = "Location: " + response?.get(0)?.homes?.get(0)?.location.toString()
+                txtHomePostal.text = "Postal Code: " + response?.get(0)?.homes?.get(0)?.postalcode.toString()
+                txtHomeAddress.text = "Address: " + response?.get(0)?.homes?.get(0)?.streetNumber.toString() + " " + response?.get(0)?.homes?.get(0)?.streetName.toString()
+                txtHomePolicySD.text = "Policy Start Date: " + response?.get(0)?.homes?.get(0)?.homePolicy?.homePolicyStartDate.toString()
+                txtHomePolicyED.text = "Policy End Date: " + response?.get(0)?.homes?.get(0)?.homePolicy?.homePolicyEndDate.toString()
+                txtHomePolicyPrem.text = "Policy Premium: " + response?.get(0)?.homes?.get(0)?.homePolicy?.homePolicyPremium.toString()
             }
 
             override fun onFailure(call: Call<List<CustomerResponse>>, t: Throwable) {

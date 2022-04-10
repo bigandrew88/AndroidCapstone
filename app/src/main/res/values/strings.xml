@@ -42,7 +42,7 @@
     <string name="txtContactInfoEmail">Email: quote@taylorinsurance.com</string>
     <string name="btnBackContactUs">Home</string>
 
-    <string name="txtHomeInfo">Home Insurance Information:</string>
+    <string name="txtHomeInfo">Home Policy Information:</string>
     <string name="txtHomeCity">City:</string>
     <string name="txtHomeDateBuilt">Date Built:</string>
     <string name="txtHomeHeatType">Heating Type:</string>

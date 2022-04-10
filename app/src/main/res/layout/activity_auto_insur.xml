@@ -1,38 +1,112 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
     xmlns:tools="http://schemas.android.com/tools"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeInsurActivity"
-    android:fillViewport="true">
+    android:orientation="vertical"
+    tools:context=".AutoInsurActivity"    >
+
+    <ImageView
+        android:id="@+id/ivMainLogo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:background="@drawable/taylorinsurancepuregreen" />
+
+    <TextView
+        android:id="@+id/txtHomeInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:text="@string/txtHomeInfo"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/txtHomeCity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txtHomeCity"
+        android:textSize="16sp"
+        android:layout_marginStart="30dp"/>
+
+    <TextView
+        android:id="@+id/txtHomeDateBuilt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txtHomeDateBuilt"
+        android:textSize="16sp"
+        android:layout_marginStart="30dp"/>
+
+    <TextView
+        android:id="@+id/txtHomeHeatType"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txtHomeHeatType"
+        android:textSize="16sp"
+        android:layout_marginStart="30dp"/>
+
+    <TextView
+        android:id="@+id/txtHomeLocation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txtHomeLocation"
+        android:textSize="16sp"
+        android:layout_marginStart="30dp"/>
+
+    <TextView
+        android:id="@+id/txtHomePostal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txtHomePostal"
+        android:textSize="16sp"
+        android:layout_marginStart="30dp"/>
+
+    <TextView
+        android:id="@+id/txtHomeAddress"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txtHomeAddress"
+        android:textSize="16sp"
+        android:layout_marginStart="30dp"/>
+
+    <TextView
+        android:id="@+id/txtHomePolicySD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txtHomePolicySD"
+        android:textSize="16sp"
+        android:layout_marginStart="30dp"/>
+
+    <TextView
+        android:id="@+id/txtHomePolicyED"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txtHomePolicyED"
+        android:textSize="16sp"
+        android:layout_marginStart="30dp"/>
+
+    <TextView
+        android:id="@+id/txtHomePolicyPrem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:text="@string/txtHomePolicyPrem"
+        android:textSize="16sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+
+        android:gravity="center_horizontal|bottom"
         android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/textview"
-            android:layout_height="0dp"
-            android:layout_weight="1"
+        <Button
+            android:id="@+id/btnBackAutoInsur"
             android:layout_width="match_parent"
-            android:padding="6dp"
-            android:text="Auto Insurance Information:"/>
-
-        <LinearLayout
             android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:background="@android:drawable/bottom_bar"
-            android:gravity="center_vertical">
-
-            <Button
-                android:id="@+id/btnBackAutoInsur"
-                android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="wrap_content"
-                android:text="Back" />
-        </LinearLayout>
+            android:text="Back" />
     </LinearLayout>
-</ScrollView>
+</LinearLayout>
