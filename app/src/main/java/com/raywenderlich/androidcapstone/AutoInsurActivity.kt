@@ -7,9 +7,6 @@ import android.util.Log
 import com.raywenderlich.androidcapstone.ap2.ApiInterface
 import com.raywenderlich.androidcapstone.apidata.CustomerResponse
 import com.raywenderlich.androidcapstone.databinding.ActivityAutoInsurBinding
-import com.raywenderlich.androidcapstone.test.APIClient
-import com.raywenderlich.androidcapstone.test.APIInterface
-import com.raywenderlich.androidcapstone.test.MultipleResource
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response

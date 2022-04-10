@@ -53,4 +53,12 @@
     <string name="txtHomePolicyED">Policy End Date:</string>
     <string name="txtHomePolicyPrem">Policy Premium:</string>
 
+    <string name="txtAutoInfo">Auto Policy Information:</string>
+    <string name="txtAutoMake">Vehicle Make:</string>
+    <string name="txtAutoModel">Vehicle Model:</string>
+    <string name="txtAutoDateMade">Date Manufactured:</string>
+    <string name="txtAutoPolicySD">Policy Start Date:</string>
+    <string name="txtAutoPolicyED">Policy End Date:</string>
+    <string name="txtAutoPolicyPrem">Policy Premium:</string>
+
 </resources>

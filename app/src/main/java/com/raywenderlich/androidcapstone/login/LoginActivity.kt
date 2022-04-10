@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
+import android.util.Log
 import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.widget.EditText
@@ -17,10 +18,14 @@ import androidx.lifecycle.Observer
 import com.raywenderlich.androidcapstone.CustomerActivity
 import com.raywenderlich.androidcapstone.MainActivity
 import com.raywenderlich.androidcapstone.R
+import com.raywenderlich.androidcapstone.test.SharedViewModel
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var loginViewModel: LoginViewModel
     private lateinit var binding: ActivityLoginBinding
+    val viewModel: SharedViewModel by lazy{
+        ViewModelProvider(this).get(SharedViewModel::class.java)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -36,6 +41,9 @@ class LoginActivity : AppCompatActivity() {
         val password = binding.password
         val login = binding.login
         val loading = binding.loading
+
+        val apiUsername: String
+        val apiPassword: String
 
         loginViewModel = ViewModelProvider(this, LoginViewModelFactory())
             .get(LoginViewModel::class.java)
@@ -100,8 +108,38 @@ class LoginActivity : AppCompatActivity() {
             }
 
             login.setOnClickListener {
-                loading.visibility = View.VISIBLE
-                loginViewModel.login(username.text.toString(), password.text.toString())
+                viewModel.refreshCustomer(username.toString())
+                viewModel.customerLiveData.observe(this@LoginActivity){ response ->
+                    if(response == null){
+                        Log.d("Test","API Failed")
+                        Toast.makeText(
+                            this@LoginActivity,
+                            "Unsuccessful network call",
+                            Toast.LENGTH_LONG
+                        ).show()
+                        return@observe
+                    }else{
+                        Log.d("Test","API Clear")
+                        Log.d("Test Data",response[0].email)
+                        Log.d("Test Data",response[0].password)
+
+                        Log.d("Txt Username",username.text.toString())
+                        Log.d("Txt Password",password.text.toString())
+                        if(response[0].email == username.text.toString() && response[0].password == password.text.toString()){
+                            loading.visibility = View.VISIBLE
+                            loginViewModel.login(username.text.toString(), password.text.toString())
+                        }else{
+                            Toast.makeText(
+                                this@LoginActivity,
+                                "Unsuccessful Login",
+                                Toast.LENGTH_LONG
+                            ).show()
+                        }
+
+                    }
+
+                }
+
             }
         }
     }

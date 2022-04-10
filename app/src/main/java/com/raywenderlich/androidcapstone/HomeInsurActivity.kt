@@ -7,9 +7,6 @@ import android.util.Log
 import com.raywenderlich.androidcapstone.ap2.ApiInterface
 import com.raywenderlich.androidcapstone.apidata.CustomerResponse
 import com.raywenderlich.androidcapstone.databinding.ActivityHomeInsuranceBinding
-import com.raywenderlich.androidcapstone.test.APIClient
-import com.raywenderlich.androidcapstone.test.APIInterface
-import com.raywenderlich.androidcapstone.test.MultipleResource
 import kotlinx.android.synthetic.main.activity_home_insurance.*
 import retrofit2.Call
 import retrofit2.Callback
