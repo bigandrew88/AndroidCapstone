@@ -1,4 +1,4 @@
-package com.raywenderlich.androidcapstone.API
+package com.raywenderlich.androidcapstone.projectapi
 
 class ApiCustomerResponse (
     val firstName: String,
@@ -18,7 +18,7 @@ class ApiCustomerResponse (
     )
 
     data class AutoPolicy (
-        val autoPolicyPremium: Double,
+        val autoPolicyPremium: String,
         val autoPolicyStartDate: String,
         val autoPolicyEndDate: String
     )

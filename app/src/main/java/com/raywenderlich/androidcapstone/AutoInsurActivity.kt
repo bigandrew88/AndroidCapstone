@@ -1,5 +1,6 @@
 package com.raywenderlich.androidcapstone
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -7,7 +8,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.raywenderlich.androidcapstone.databinding.ActivityAutoInsurBinding
-import com.raywenderlich.androidcapstone.API.SharedViewModel
+import com.raywenderlich.androidcapstone.projectapi.SharedViewModel
 import kotlinx.android.synthetic.main.activity_auto_insur.*
 
 class AutoInsurActivity : AppCompatActivity() {
@@ -17,6 +18,7 @@ class AutoInsurActivity : AppCompatActivity() {
         ViewModelProvider(this).get(SharedViewModel::class.java)
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_auto_insur)
@@ -42,12 +44,12 @@ class AutoInsurActivity : AppCompatActivity() {
                 return@observe
             }else{
                 //Log.d("Test","API Clear")
-                txtAutoMake.text = "City: " + response?.get(0)?.autos?.get(0)?.make.toString()
-                txtAutoModel.text = "Date Built: " + response?.get(0)?.autos?.get(0)?.model.toString()
-                txtAutoDateMade.text = "Heating Type: " + response?.get(0)?.autos?.get(0)?.dateMade.toString()
-                txtAutoPolicySD.text = "Policy Start Date: " + response?.get(0)?.autos?.get(0)?.autoPolicy?.autoPolicyStartDate.toString()
-                txtAutoPolicyED.text = "Policy End Date: " + response?.get(0)?.autos?.get(0)?.autoPolicy?.autoPolicyEndDate.toString()
-                txtAutoPolicyPrem.text = "Policy Premium: " + response?.get(0)?.autos?.get(0)?.autoPolicy?.autoPolicyPremium.toString()
+                txtAutoMake.text = "Make: " + response[0].autos[0].make
+                txtAutoModel.text = "Model: " + response[0].autos[0].model
+                txtAutoDateMade.text = "Date Manufactured: " + response[0].autos[0].dateMade
+                txtAutoPolicySD.text = "Policy Start Date: " + response[0].autos[0].autoPolicy.autoPolicyStartDate
+                txtAutoPolicyED.text = "Policy End Date: " + response[0].autos[0].autoPolicy.autoPolicyEndDate
+                txtAutoPolicyPrem.text = "Policy Premium: " + response[0].autos[0].autoPolicy.autoPolicyPremium
             }
         }
     }

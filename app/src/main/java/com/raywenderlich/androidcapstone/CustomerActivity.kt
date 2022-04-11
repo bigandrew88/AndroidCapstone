@@ -7,7 +7,7 @@ import android.util.Log
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import com.raywenderlich.androidcapstone.databinding.ActivityCustomerBinding
-import com.raywenderlich.androidcapstone.API.SharedViewModel
+import com.raywenderlich.androidcapstone.projectapi.SharedViewModel
 import kotlinx.android.synthetic.main.activity_customer.*
 import okhttp3.OkHttpClient
 

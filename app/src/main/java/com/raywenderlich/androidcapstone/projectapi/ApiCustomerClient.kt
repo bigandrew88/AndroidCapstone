@@ -1,4 +1,4 @@
-package com.raywenderlich.androidcapstone.API
+package com.raywenderlich.androidcapstone.projectapi
 
 import retrofit2.Response
 

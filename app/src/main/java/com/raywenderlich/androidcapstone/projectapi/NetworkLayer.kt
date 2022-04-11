@@ -1,4 +1,4 @@
-package com.raywenderlich.androidcapstone.API
+package com.raywenderlich.androidcapstone.projectapi
 
 
 import com.squareup.moshi.Moshi
@@ -20,4 +20,5 @@ object NetworkLayer {
     }
 
     val apiClient = ApiCustomerClient(apiCustomerService)
+
 }
