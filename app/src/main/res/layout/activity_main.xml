@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="30dp"
-    tools:context=".login.LoginActivity">
+    tools:context=".login.LoginActivity"
+    android:background="@drawable/appbackgroundfog">
 
         <Button
             android:id="@+id/btnTips"
@@ -38,7 +39,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_marginRight="10dp"
+            android:layout_marginEnd="10dp"
             android:paddingHorizontal="5dp"
             android:paddingVertical="20dp"
             android:text="@string/btnContactUs"
@@ -58,7 +59,7 @@
             android:layout_width="332dp"
             android:layout_height="282dp"
             android:layout_centerHorizontal="true"
-            android:background="@drawable/taylorinsurancepuregreen" />
+            android:background="@drawable/taylorinsurancepureblack" />
 
         <TextView
             android:id="@+id/txtMainQuote"
@@ -67,7 +68,7 @@
             android:layout_below="@+id/btnLoginMain"
             android:layout_marginStart="20dp"
             android:paddingVertical="75dp"
-            android:text="@string/txtMainAutoTips"
+            android:text="@string/txtMainQuote"
             android:textSize="20sp"
             android:textStyle="bold" />
 

@@ -61,4 +61,6 @@
     <string name="txtAutoPolicyED">Policy End Date:</string>
     <string name="txtAutoPolicyPrem">Policy Premium:</string>
 
+    <string name="btnCustLogout">Logout</string>
+
 </resources>

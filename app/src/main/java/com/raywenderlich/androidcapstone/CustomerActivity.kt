@@ -1,25 +1,31 @@
 package com.raywenderlich.androidcapstone
 
+import android.content.Context
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import com.raywenderlich.androidcapstone.databinding.ActivityCustomerBinding
 import com.raywenderlich.androidcapstone.projectapi.SharedViewModel
 import kotlinx.android.synthetic.main.activity_customer.*
 import okhttp3.OkHttpClient
 
+
 class CustomerActivity : AppCompatActivity() {
     private val client = OkHttpClient()
     private lateinit var activityCustomerBinding: ActivityCustomerBinding
+
     val viewModel: SharedViewModel by lazy{
         ViewModelProvider(this).get(SharedViewModel::class.java)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        var token = getSharedPreferences("Username", Context.MODE_PRIVATE)
+
         setContentView(R.layout.activity_customer)
 
         activityCustomerBinding = ActivityCustomerBinding.inflate(layoutInflater)
@@ -63,6 +69,16 @@ class CustomerActivity : AppCompatActivity() {
             intent.putExtra("username",username)
             startActivity(intent)
             finish()
+        }
+
+        activityCustomerBinding.btnCustLogout.setOnClickListener {
+            val editor = token.edit()
+            editor.clear()
+            editor.putString("Loginusername"," ")
+            editor.apply()
+            val intent = Intent(this,MainActivity::class.java)
+            startActivity(intent)
+
         }
 
     }

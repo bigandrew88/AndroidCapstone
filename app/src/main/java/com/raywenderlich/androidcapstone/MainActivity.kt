@@ -1,8 +1,8 @@
 package com.raywenderlich.androidcapstone
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.raywenderlich.androidcapstone.databinding.ActivityMainBinding
 import com.raywenderlich.androidcapstone.login.LoginActivity
 
@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
 
         activityMainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(activityMainBinding.root)

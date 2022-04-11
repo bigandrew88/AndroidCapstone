@@ -1,6 +1,7 @@
 package com.raywenderlich.androidcapstone.login
 
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
@@ -23,12 +24,14 @@ import com.raywenderlich.androidcapstone.projectapi.SharedViewModel
 class LoginActivity : AppCompatActivity() {
     private lateinit var loginViewModel: LoginViewModel
     private lateinit var binding: ActivityLoginBinding
+
     val viewModel: SharedViewModel by lazy{
         ViewModelProvider(this).get(SharedViewModel::class.java)
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        var token = getSharedPreferences("Username", Context.MODE_PRIVATE)
 
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
@@ -36,6 +39,12 @@ class LoginActivity : AppCompatActivity() {
         binding.btnLoginCancel.setOnClickListener {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
+        }
+
+        if(token.getString("Loginusername"," ")!= " "){
+            val intent = Intent(this, CustomerActivity::class.java)
+            startActivity(intent)
+            finish()
         }
         val username = binding.username
         val password = binding.password
@@ -74,7 +83,10 @@ class LoginActivity : AppCompatActivity() {
 
                 //Log.d("Login Username",username.text.toString())
                 val intent = Intent(this, CustomerActivity::class.java)
-                intent.putExtra("customer",username.text.toString().lowercase())
+                intent.putExtra("username",username.text.toString().lowercase())
+                var editor = token.edit()
+                editor.putString("Loginusername",username.text.toString().lowercase())
+                editor.apply()
                 startActivity(intent)
                 finish()
             }

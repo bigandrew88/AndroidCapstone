@@ -2,6 +2,7 @@ package com.raywenderlich.androidcapstone.data
 
 
 
+import android.content.Context
 import androidx.lifecycle.*
 import com.raywenderlich.androidcapstone.model.LoggedInUser
 import java.io.IOException
@@ -11,7 +12,6 @@ import java.io.IOException
  * Class that handles authentication w/ login credentials and retrieves user information.
  */
 class LoginDataSource {
-
     fun login(username: String, password: String): Result<LoggedInUser> {
         try {
             // TODO: handle loggedInUser authentication

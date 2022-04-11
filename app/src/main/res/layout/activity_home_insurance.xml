@@ -6,14 +6,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="30dp"
-    tools:context=".HomeInsurActivity"    >
+    tools:context=".HomeInsurActivity"
+    android:background="@drawable/appbackgroundfog">
 
     <ImageView
         android:id="@+id/ivMainLogo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="0"
-        android:background="@drawable/taylorinsurancepuregreen" />
+        android:background="@drawable/taylorinsurancepureblack" />
 
     <TextView
         android:id="@+id/txtHomeInfo"
@@ -28,65 +29,73 @@
         android:id="@+id/txtHomeCity"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
         android:text="@string/txtHomeCity"
         android:textSize="16sp"
-        android:layout_marginStart="30dp"/>
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txtHomeDateBuilt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
         android:text="@string/txtHomeDateBuilt"
         android:textSize="16sp"
-        android:layout_marginStart="30dp"/>
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txtHomeHeatType"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
         android:text="@string/txtHomeHeatType"
         android:textSize="16sp"
-        android:layout_marginStart="30dp"/>
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txtHomeLocation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
         android:text="@string/txtHomeLocation"
         android:textSize="16sp"
-        android:layout_marginStart="30dp"/>
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txtHomePostal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
         android:text="@string/txtHomePostal"
         android:textSize="16sp"
-        android:layout_marginStart="30dp"/>
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txtHomeAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
         android:text="@string/txtHomeAddress"
         android:textSize="16sp"
-        android:layout_marginStart="30dp"/>
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txtHomePolicySD"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
         android:text="@string/txtHomePolicySD"
         android:textSize="16sp"
-        android:layout_marginStart="30dp"/>
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txtHomePolicyED"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
         android:text="@string/txtHomePolicyED"
         android:textSize="16sp"
-        android:layout_marginStart="30dp"/>
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/txtHomePolicyPrem"
@@ -94,7 +103,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
         android:text="@string/txtHomePolicyPrem"
-        android:textSize="16sp" />
+        android:textSize="16sp"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="match_parent"
